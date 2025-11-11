@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipos y Selecciones - FutbolFan</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">FutbolFan</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Productos</a></li>
+                    <li><a href="equipos.html" class="active">Equipos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="teams-page">
+            <h2>Nuestras Colecciones de Equipos</h2>
+            <p class="section-description">Explora las camisetas de tus selecciones y clubes favoritos.</p>
+
+            <img src="https://cf.camisetasfutbol.com.cn/upload/20240712/0c8ad55d773cfcb0d8f413fe59845713.jpg=z-0,0_f-webp"
+                alt="Equipaciones de Fútbol" class="teams-hero-image">
+
+            <audio controls="true" id="audio-player">
+                <source src="public/audio_tienda.mp3" type="audio/mpeg">
+            </audio>
+
+            <div class="teams-category">
+                <h3>Selecciones Nacionales</h3>
+                <div class="team-grid">
+
+                    <div class="team-card">
+                        <img src="data:image/png;base64,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"
+                            alt="Bandera de México" class="team-logo">
+                        <h4>México</h4>
+                        <div class="jerseys">
+                            <div class="jersey-item">
+                                <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/eaa3d40cdf674add9fb1c73146c9774a_9366/Jersey_Local_Seleccion_Nacional_de_Mexico_26_Verde_JL8537_01_laydown.jpg"
+                                    alt="Camiseta México Local">
+                                <p>Local</p>
+                                <a href="https://www.adidas.mx/jersey-local-seleccion-nacional-de-mexico-26/JL8537.html"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                            <div class="jersey-item">
+                                <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/58f28ef7cc7847329233d304c080f3ff_9366/Jersey_Visitante_Seleccion_Nacional_de_Mexico_24_Kids_Verde_IP9748_01_laydown.jpg"
+                                    alt="Camiseta México Visitante">
+                                <p>Visitante</p>
+                                <a href="https://www.adidas.mx/jersey-visitante-seleccion-nacional-de-mexico-24-kids/IP9748.html"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/330px-Flag_of_Argentina.svg.png"
+                            alt="Bandera de Argentina" class="team-logo">
+                        <h4>Argentina</h4>
+                        <div class="jerseys">
+                            <div class="jersey-item">
+                                <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a98e2173ceb5427980bdd77bea1b4f27_9366/Jersey_Local_Seleccion_Argentina_26_Blanco_KA8125_01_laydown.jpg"
+                                    alt="Camiseta Argentina Local">
+                                <p>Local</p>
+                                <a href="https://www.adidas.mx/jersey-local-seleccion-argentina-26/KA8125.html"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                            <div class="jersey-item">
+                                <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/3137a18fbab64122900f36af3b0d8889_9366/Jersey_Visitante_Argentina_1994_Azul_IS0266_HM30.jpg"
+                                    alt="Camiseta Argentina Visitante">
+                                <p>Visitante</p>
+                                <a href="https://www.adidas.mx/jersey-visitante-argentina-1994/IS0266.html"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_West_Germany%3B_Flag_of_Germany_%281990%E2%80%931996%29.svg/250px-Flag_of_West_Germany%3B_Flag_of_Germany_%281990%E2%80%931996%29.svg.png"
+                            alt="Bandera de Alemania" class="team-logo">
+                        <h4>Alemania</h4>
+                        <div class="jerseys">
+                            <div class="jersey-item">
+                                <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/8a585d1a21454417b84b1ff3d0dd173d_9366/Jersey_Local_Alemania_26_Version_Jugador_Blanco_JN2066_HM5.jpg"
+                                    alt="Camiseta Alemania Local">
+                                <p>Local</p>
+                                <a href="https://www.adidas.mx/jersey-local-alemania-26-version-jugador/JN2066.html"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                            <div class="jersey-item">
+                                <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/65ab78edf90a46489bcd70a8ffb4e76a_9366/Jersey_Visitante_Alemania_25_Equipo_femenino_Granate_JF2605_01_laydown.jpg"
+                                    alt="Camiseta Alemania Visitante">
+                                <p>Visitante</p>
+                                <a href="https://www.adidas.mx/jersey-visitante-alemania-25-equipo-femenino/JF2605.html"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/New-Flag-of-the-President-of-Colombia.svg/250px-New-Flag-of-the-President-of-Colombia.svg.png"
+                            alt="Bandera de Colombia" class="team-logo">
+                        <h4>Colombia</h4>
+                        <div class="jerseys">
+                            <div class="jersey-item">
+                                <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/0154382251444ca7b82ef43b02afc42c_9366/Jersey_Local_Seleccion_Colombia_26_Version_Jugador_Amarillo_JL6971_HM5.jpg"
+                                    alt="Camiseta Colombia Local">
+                                <p>Local</p>
+                                <a href="https://www.adidas.mx/jersey-local-seleccion-colombia-26-version-jugador/JL6971.html"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                            <div class="jersey-item">
+                                <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/d8c598e86b2b4fa4a1854e5696d5db6a_9366/Jersey_Visitante_Colombia_24_Negro_IP8268_01_laydown.jpg"
+                                    alt="Camiseta Colombia Visitante">
+                                <p>Visitante</p>
+                                <a href="https://www.adidas.mx/jersey-visitante-colombia-24/IP8268.html"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="teams-category">
+                <h3>Clubes</h3>
+                <div class="team-grid">
+
+                    <div class="team-card">
+                        <img src="https://banderasysoportes.com/wp-content/uploads/FC-BARCELONA.png"
+                            alt="Logo Barcelona" class="team-logo">
+                        <h4>FC Barcelona</h4>
+                        <div class="jerseys">
+                            <div class="jersey-item">
+                                <img src="https://soccermaxx.ca/cdn/shop/files/1_136.jpg?v=1752859300"
+                                    alt="Camiseta Barcelona Local">
+                                <p>Local</p>
+                                <a href="https://www.nike.com/mx/t/jersey-de-fútbol-dri-fit-replica-fc-barcelona-local-2025-26-stadium-EBg0c66d/HJ4590-456"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                            <div class="jersey-item">
+                                <img src="https://www.tudnfanshop.com/cdn/shop/files/TVB_aad0fa73-d075-4bb8-82cd-6528573dc77f.png?v=1753976721&width=1500"
+                                    alt="Camiseta Barcelona Visitante">
+                                <p>Visitante</p>
+                                <a href="https://www.nike.com/mx/t/jersey-de-fútbol-dri-fit-replica-fc-barcelona-visitante-2025-26-stadium-EBg0c66d/HJ4590-456"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <img src="data:image/png;base64,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"
+                            alt="Logo Real Madrid" class="team-logo">
+                        <h4>Real Madrid CF</h4>
+                        <div class="jerseys">
+                            <div class="jersey-item">
+                                <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/68f433dd2a1141ffba47a66cfc82d1ff_9366/Camiseta_autentica_de_local_del_Real_Madrid_25-26_Blanco_JV5918_HM30.jpg"
+                                    alt="Camiseta Real Madrid Local">
+                                <p>Local</p>
+                                <a href="https://www.adidas.com.mx/jersey_autentico_de_local_del_real_madrid_25-26_blanco_JV5918.html"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                            <div class="jersey-item">
+                                <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/0e917020f156494faa5b550b39bd36cc_9366/Jersey_Visitante_Real_Madrid_25-26_Azul_JJ4182_01_laydown.jpg"
+                                    alt="Camiseta Real Madrid Visitante">
+                                <p>Visitante</p>
+                                <a href="https://www.adidas.com.mx/jersey_visitante_real_madrid_25-26_azul_JJ4182.html"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <img src="https://www.flagcolorcodes.com/data/flag-of-liverpool-fc.png" alt="Logo Liverpool"
+                            class="team-logo">
+                        <h4>Liverpool FC</h4>
+                        <div class="jerseys">
+                            <div class="jersey-item">
+                                <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/a68465d594394b758133e35ede1e5e22_9366/Jersey_autentico_de_local_25-26_del_Liverpool_FC_Rojo_JY4237_HM30.jpg"
+                                    alt="Camiseta Liverpool Local">
+                                <p>Local</p>
+                                <a href="https://www.adidas.mx/jersey-autentico-de-local-25-26-del-liverpool-fc/JY4237.html"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                            <div class="jersey-item">
+                                <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/2d296b7db27a4d5a80401ee6f8a00dd3_9366/Jersey_visitante_del_Liverpool_FC_25-26_Blanco_JV6487_01_laydown.jpg"
+                                    alt="Camiseta Liverpool Visitante">
+                                <p>Visitante</p>
+                                <a href="https://www.adidas.mx/jersey-visitante-del-liverpool-fc-25-26/JV6487.html"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <img src="https://w0.peakpx.com/wallpaper/129/986/HD-wallpaper-soccer-paris-saint-germain-f-c-soccer-logo.jpg"
+                            alt="Logo PSG" class="team-logo">
+                        <h4>Paris Saint-Germain</h4>
+                        <div class="jerseys">
+                            <div class="jersey-item">
+                                <img src="https://martimx.vtexassets.com/arquivos/ids/1479810-800-800?v=638865642166870000&width=800&height=800&aspect=true"
+                                    alt="Camiseta PSG Local">
+                                <p>Local</p>
+                                <a href="https://www.nike.com/mx/t/jersey-de-fútbol-dri-fit-adv-authentic-del-paris-saint-germain-local-2025-26-match-o5hfU2Ie/HJ4547-411"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                            <div class="jersey-item">
+                                <img src="https://www.innovasport.com/medias/IS-FN8972-101-9.jpg?context=bWFzdGVyfGltYWdlc3w4MDQxNHxpbWFnZS9qcGVnfGFXMWhaMlZ6TDJneU15OW9Nemt2TVRJNE5EWTVOamt5TlRnd01UUXVhbkJufDIyNTJjOWE3YmRiZDJkNGFkOGNmZTQ2YTRjMWZlZWZhM2UyOTZlZTIwMzMxNDJmMjBjNDAxMTBlZWJhYTcwMTY"
+                                    alt="Camiseta PSG Visitante">
+                                <p>Visitante</p>
+                                <a href="https://www.nike.com/mx/t/jersey-de-fútbol-dri-fit-replica-del-paris-saint-germain-visitante-2025-26-stadium-DM5G4c/FN8781-101"
+                                    class="btn-add-cart">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FutbolFan. Todos los derechos reservados.</p>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
